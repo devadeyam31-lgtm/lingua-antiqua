@@ -1,0 +1,14 @@
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("sw.js");
+}
+
+function translate() {
+  const text = document.getElementById("input").value;
+
+  if (!text) return;
+
+  const result = "Translated: " + text;
+
+  document.getElementById("output").innerText = result;
+  localStorage.setItem("lastTranslation", result);
+}
